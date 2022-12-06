@@ -75,7 +75,7 @@ def home():
             dead("But you endup going to school late either way.")
         elif choice == "lie to her" and not bed_room:
             print("She gets you and let's you stay home.")
-            bed_room = False 
+            bed_room = False
         elif choice == "lie to her" and bed_room:
             print("She catches you lying to her and punishes you.")
             dead("Takes you to school and talks to your teacher aswell.")

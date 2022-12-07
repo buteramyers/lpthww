@@ -17,42 +17,54 @@ class Employee:
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amount)
 
-class Developer(Employee):
-    raise_amt = 1.10
+    def __repr__(self):
+        return "Employee('{}', '{}', {})".format(self.first, self.last, self.pay)
 
-    def __init__(self, first, last, pay, prog_lang):
-        super().__init__(first, last, pay)
-        self.prog_lang = prog_lang
+    def __str__(self):
+        return '{} - {}'.format(self.fullname, self.email)
 
-class Manager(Employee):
+    def __add__(self, other):
+        return self.pay + other.pay 
 
-    def __init__(self, first, last, pay, employees=None):
-        super().__init__(first, last, pay)
-        if employees is None:
-            self.employees = []
-        else:
-            self.employees = employees
+    def __len__(self):
+        return len(self.fullname())
 
-    def add_employee(self, emp):
-        if emp not in self.employees:
-            self.employees.append(emp)
+# class Developer(Employee):
+#     raise_amt = 1.10
+
+#     def __init__(self, first, last, pay, prog_lang):
+#         super().__init__(first, last, pay)
+#         self.prog_lang = prog_lang
+
+# class Manager(Employee):
+
+#     def __init__(self, first, last, pay, employees=None):
+#         super().__init__(first, last, pay)
+#         if employees is None:
+#             self.employees = []
+#         else:
+#             self.employees = employees
+
+#     def add_employee(self, emp):
+#         if emp not in self.employees:
+#             self.employees.append(emp)
 
 
-    def remove_emp(self,emp):
-        if emp in self.employees:
-            self.employees.remove(emp)
+#     def remove_emp(self,emp):
+#         if emp in self.employees:
+#             self.employees.remove(emp)
 
     
-    def print_emps(self):
-        for emp in self.employees:
-            print('-->', emp.fullname())
+#     def print_emps(self):
+#         for emp in self.employees:
+#             print('-->', emp.fullname())
 
-dev_1 = Developer('Myers', 'Butera', 50000, 'Python')
-dev_2 = Developer('Test', 'Employee', 60000, 'Java')
+# dev_1 = Developer('Myers', 'Butera', 50000, 'Python')
+# dev_2 = Developer('Test', 'Employee', 60000, 'Java')
 
-mgr_1 = Manager('Sue', 'Smith', 90000, [dev_1])
+# mgr_1 = Manager('Sue', 'Smith', 90000, [dev_1])
 
-print(issubclass(Manager, Developer))
+# print(issubclass(Manager, Developer))
 
 # print(mgr_1.email)
 
@@ -87,6 +99,20 @@ print(issubclass(Manager, Developer))
 
 emp_1 = Employee('Butera', 'Myers', 40000)
 emp_2 = Employee('Test', 'User', 30000)
+
+print(len('emp_1'))
+
+
+# print(emp_1 + emp_2)
+# print(emp_1)
+
+# print(repr(emp_1))
+# print(str(emp_1))
+
+# print(emp_1.__repr__())
+# print(emp_1.__str__())
+
+
 
 # import datetime 
 # my_date = datetime.date(2022, 12, 6)

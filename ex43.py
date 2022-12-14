@@ -45,7 +45,7 @@ class Death(Scene):
     quips = [
         "You died. You kinda suck at this.",
         "Your Mom would be proud...if she were smarter.",
-        "Such a luser.",
+        "Such a loser.",
         "I have a small puppy that's better at this.",
         "You're worse than your Dad's jokes."
 
@@ -82,7 +82,7 @@ class CentralCorridor(Scene):
             print(dedent("""
                   Lucky for you they made you learn Gothon insults in the academy. You tell the one Gothon joke you know: Lbh xbgure vf fb snf, jieis kgsfkb jsjvm oe niwk neocm jdfieio. The Gothon stops, tries not to laugh, then bursts out laughing and can't move. While he's laughing you run up and shoot him square the head putting him down, jump through the Weapon Armory door.
                 """))
-            return 'laser_waepon_armory'
+            return 'laser_weapon_armory'
 
         else:
             print("DOES NOT COMPUTE!")
